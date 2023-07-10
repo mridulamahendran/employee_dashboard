@@ -1,0 +1,155 @@
+<div class="row">
+  <div class="col-lg-3 col-md-6 col-sm-6">
+    <div id='1' class="card card-stats" style="cursor:pointer;" (click)="loadCharts('oe','1')">
+      <div class="card-body ">
+        <div class="row">
+          <div class="col-5 col-md-4">
+            <div class="icon-big text-center icon-warning">
+              <i class="nc-icon nc-vector text-warning"></i>
+            </div>
+          </div>
+          <div class="col-7 col-md-8">
+            <div class="numbers">
+              <p class="card-category">OE</p>
+              <p class="card-title">{{ lengths[3] }}
+                <p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer ">
+        <hr>
+        <div class="stats">
+          <i class="nc-icon nc-compass-05"></i> Order Engineering
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-6 col-sm-6">
+    <div id='2' class="card card-stats" style="cursor:pointer;" (click)="loadCharts('sol','2')">
+      <div class="card-body ">
+        <div class="row">
+          <div class="col-5 col-md-4">
+            <div class="icon-big text-center icon-warning">
+              <i class="nc-icon nc-vector text-success"></i>
+            </div>
+          </div>
+          <div class="col-7 col-md-8">
+            <div class="numbers">
+              <p class="card-category">SOL</p>
+              <p class="card-title">{{ lengths[0] }}
+                <p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer ">
+        <hr>
+        <div class="stats">
+          <i class="nc-icon nc-compass-05"></i> Solutions
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-6 col-sm-6">
+    <div id='3' class="card card-stats" style="cursor:pointer;" (click)="loadCharts('mas','3')">
+      <div class="card-body ">
+        <div class="row">
+          <div class="col-5 col-md-4">
+            <div class="icon-big text-center icon-warning">
+              <i class="nc-icon nc-vector text-danger"></i>
+            </div>
+          </div>
+          <div class="col-7 col-md-8">
+            <div class="numbers">
+              <p class="card-category">MAS</p>
+              <p class="card-title">{{ lengths[2] }}
+                <p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer ">
+        <hr>
+        <div class="stats">
+          <i class="nc-icon nc-compass-05"></i> Manage Services
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-6 col-sm-6">
+    <div id='4' class="card card-stats" style="cursor:pointer;" (click)="loadCharts('fcpq','4')">
+      <div class="card-body ">
+        <div class="row">
+          <div class="col-5 col-md-4">
+            <div class="icon-big text-center icon-warning">
+              <i class="nc-icon nc-vector text-primary"></i>
+            </div>
+          </div>
+          <div class="col-7 col-md-8">
+            <div class="numbers">
+              <p class="card-category">FCPQ</p>
+              <p class="card-title">{{ lengths[1] }}
+                <p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer ">
+        <hr>
+        <div class="stats">
+          <i class="nc-icon nc-compass-05"></i> Future Configure Price Quote
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card ">
+      <div class="card-header ">
+        <h5 class="card-title">Years Of Experience</h5>
+      </div>
+      <div class="card-body ">
+        <canvas id=chartHours width="400" height="100"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <div class="card ">
+      <div class="card-header ">
+        <h5 class="card-title">Gender Stats</h5>
+      </div>
+      <div class="card-body ">
+        <canvas id="chartEmail"></canvas>
+      </div>
+      <div class="card-footer ">
+        <div class="legend">
+          <i class="fa fa-circle text-primary"></i> Male
+          <i class="fa fa-circle text-danger"></i> Female
+          <i class="fa fa-circle text-gray"></i> Other
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <div class="card card-chart">
+      <div class="card-header">
+        <h5 class="card-title">Designation Stats</h5>
+      </div>
+      <div class="card-body">
+        <canvas id="speedChart" width="700" height="300"></canvas>
+      </div>
+      <div class="card-footer">
+        <div class="chart-legend">
+          <i class="fa fa-circle text-info"></i> Individual Contributors
+          <i class="fa fa-circle text-warning"></i> Senior Managers
+          <i class="fa fa-circle text-danger"></i> Reporting Managers
+          <i class="fa fa-circle text-gray"></i> Technical Leads
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

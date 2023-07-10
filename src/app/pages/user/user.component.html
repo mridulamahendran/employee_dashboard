@@ -1,0 +1,172 @@
+<div class="row">
+  <div class="col-md">
+    <div class="card card-user">
+      <div class="card-header">
+        <h5 class="card-title">Create Employee Profile</h5>
+      </div>
+      <div class="card-body">
+        <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+          <div class="row">
+            <div class="col-md-6 pr-1">
+              <div class="form-group">
+                <label>First Name</label>
+                <input type="text" class="form-control" placeholder="First Name" value="" name="firstname" required ngModel>
+              </div>
+            </div>
+            <div class="col-md-6 pl-1">
+              <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" class="form-control" placeholder="Last Name" value="" name="lastname" required ngModel>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label>Department</label>
+                <select class="form-control" name="department" required ngModel>
+                  <option value="" disabled selected>-- Select --</option>
+                  <option value="OE">OE</option>
+                  <option value="SOL">SOL</option>
+                  <option value="FCPQ">FCPQ</option>
+                  <option value="MAS">MAS</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 pr-1">
+              <div class="form-group">
+                <label>Designation</label>
+                <select class="form-control" name="designation" required ngModel>
+                  <option value="" disabled selected>-- Select --</option>
+                  <option value="Technical Lead">Technical Lead</option>
+                  <option value="Individual Contributor">Individual Contributor</option>
+                  <option value="Reporting Manager">Reporting Manager</option>
+                  <option value="Senior Manager">Senior Manager</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-4 px-1">
+              <div class="form-group">
+                <label>Gender</label>
+                <select class="form-control" name="gender" required ngModel>
+                  <option value="" disabled selected>-- Select --</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Others">Others</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-4 pl-1">
+              <div class="form-group">
+                <label>Experience</label>
+                <input type="number" class="form-control" placeholder="Experience" name="experience" required ngModel>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            
+            <div class="col-md-6 pr-1">
+              <div class="form-group">
+                <label>Primary Skills</label>
+                <div class="form-control" [scrollTop]="scrollHeight">
+                  <span class="placeholder" *ngIf="selectedSkills.length === 0">-- Selected Skills --</span>
+                  <span class='list' *ngFor="let skill of selectedSkills">{{ skill }}</span>
+                </div>
+                <br>
+                <select [(ngModel)]="selectedOption" class="form-control" required ngModel (change)="addSkill()">
+                  <option value="" disabled selected>-- Select --</option>
+                  <option (click)="addSkill()" value="Software Development">Software Development</option>
+                  <option (click)="addSkill()" value="Quality Assurance">Quality Assurance</option>
+                  <option (click)="addSkill()" value="Sales and Marketing">Sales and Marketing</option>
+                  <option (click)="addSkill()" value="Software Testing">Software Testing</option>
+                  <option (click)="addSkill()" value="Data Analysis">Data Analysis</option>
+                  <option (click)="addSkill()" value="UX/UI Design">UX/UI Design</option>
+                  <option (click)="addSkill()" value="Electrical Engineering">Electrical Engineering</option>
+                  <option (click)="addSkill()" value="Mechanical Engineering">Mechanical Engineering</option>
+                  <option (click)="addSkill()" value="Customer Support">Customer Support</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6 pr-1">
+              <div class="form-group">
+                <label>Secondary Skills</label>
+                <div class="form-control" [scrollTop]="scrollHeight2">
+                  <span class="placeholder" *ngIf="selectedSkills2.length === 0">-- Selected Skills --</span>
+                  <span class='list' *ngFor="let skill of selectedSkills2">{{ skill }}</span>
+                </div>
+                <br>
+                <select [(ngModel)]="selectedOption2" class="form-control" required ngModel (change)="addSkill2()">
+                  <option value="" disabled selected>-- Select --</option>
+                  <option (click)="addSkill2()" value="Project Management">Project Management</option>
+                  <option (click)="addSkill2()" value="Communication">Communication</option>
+                  <option (click)="addSkill2()" value="Content Writing">Content Writing</option>
+                  <option (click)="addSkill2()" value="Presentation Skills">Presentation Skills</option>
+                  <option (click)="addSkill2()" value="Organizational Skills">Organizational Skills</option>
+                  <option (click)="addSkill2()" value="Public Speaking">Public Speaking</option>
+                  <option (click)="addSkill2()" value="Contract Negotiation">Contract Negotiation</option>
+                </select>
+
+              </div>
+            </div>
+            
+
+
+            <!--
+            <div class="col-md-6 pr-1">
+              <div class="form-group">
+                <label>Primary Skills</label>
+                <div class="form-control" [scrollTop]="scrollHeight">
+                  <span class="placeholder" *ngIf="selectedSkills.length === 0">-- Selected Skills --</span>
+                  <span class='list' *ngFor="let skill of selectedSkills">{{ skill }}</span>
+                </div>
+                <br>
+                <select [(ngModel)]="selectedOption" class="form-control" (change)="addSkill()">
+                  <option value="" disabled selected>-- Select --</option>
+                  <option value="Software Development">Software Development</option>
+                  <option value="Quality Assurance">Quality Assurance</option>
+                  <option value="Sales and Marketing">Sales and Marketing</option>
+                  <option value="Software Testing">Software Testing</option>
+                  <option value="Data Analysis">Data Analysis</option>
+                  <option value="UX/UI Design">UX/UI Design</option>
+                  <option value="Electrical Engineering">Electrical Engineering</option>
+                  <option value="Mechanical Engineering">Mechanical Engineering</option>
+                  <option value="Customer Support">Customer Support</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6 pr-1">
+              <div class="form-group">
+                <label>Secondary Skills</label>
+                <div class="form-control" [scrollTop]="scrollHeight2">
+                  <span class="placeholder" *ngIf="selectedSkills2.length === 0">-- Selected Skills --</span>
+                  <span class='list' *ngFor="let skill of selectedSkills2">{{ skill }}</span>
+                </div>
+                <br>
+                <select [(ngModel)]="selectedOption2" class="form-control" (change)="addSkill2()">
+                  <option value="" disabled selected>-- Select --</option>
+                  <option value="Project Management">Project Management</option>
+                  <option value="Communication">Communication</option>
+                  <option value="Content Writing">Content Writing</option>
+                  <option value="Presentation Skills">Presentation Skills</option>
+                  <option value="Organizational Skills">Organizational Skills</option>
+                  <option value="Public Speaking">Public Speaking</option>
+                  <option value="Contract Negotiation">Contract Negotiation</option>
+                </select>
+              </div>
+            </div>
+            -->
+
+
+          </div>
+          <div class="row">
+            <div class="update ml-auto mr-auto">
+              <button type="submit" class="btn btn-primary btn-round">Create Profile</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

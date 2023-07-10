@@ -1,0 +1,61 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header d-flex justify-content-between">
+        <h4 class="card-title">Employee Table</h4>
+        <div class="form-group">
+          <label for="responseFilter">Filter:</label>
+          <select class="form-control" id="responseFilter" (change)="loadTable($event.target.value)">
+            <option value="all">All</option>
+            <option value="oe">OE</option>
+            <option value="sol">SOL</option>
+            <option value="mas">MAS</option>
+            <option value="fcpq">FCPQ</option>
+          </select>
+          <i id="null"></i>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table">
+            <thead class="text-primary">
+              <th>
+                S.No
+              </th>
+              <th style="cursor:pointer;" (click)="sortDataByParameters('th1','firstName')">
+                First&nbsp;Name&nbsp;<i id='th1' class="fa fa-sort" style="display:none;"></i>
+              </th>
+              <th style="cursor:pointer;" (click)="sortDataByParameters('th2','lastName')">
+                Last&nbsp;Name&nbsp;<i id='th2' class="fa fa-sort" style="display:none;"></i>
+              </th>
+              <th style="cursor:pointer;" (click)="sortDataByParameters('th3','department')">
+                Department&nbsp;<i id='th3' class="fa fa-sort" style="display:none;"></i>
+              </th>
+              <th style="cursor:pointer;" (click)="sortDataByParameters('th4','designation')">
+                Designation&nbsp;<i id='th4' class="fa fa-sort" style="display:none;"></i>
+              </th>
+              <th style="cursor:pointer;" (click)="sortDataByParameters('th5','gender')">
+                Gender&nbsp;<i id='th5' class="fa fa-sort" style="display:none;"></i>
+              </th>
+              <th style="cursor:pointer;" (click)="sortDataByParameters('th6','yearsOfExperience')">
+                Experience&nbsp;<i id='th6' class="fa fa-sort" style="display:none;"></i>
+              </th>
+              <th>
+                Primary Skills
+              </th>
+              <th>
+                Secondary Skills
+              </th>
+              <th>
+
+              </th>
+            </thead>
+            <tbody #tableRef>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
